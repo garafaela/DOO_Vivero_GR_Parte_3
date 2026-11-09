@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ga.rafaela.doo_vivero_gr_parte_3.controller.MainController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="457.0">
+         <children>
+            <TableView fx:id="tablaPlantas" prefHeight="430.0" prefWidth="431.0">
+              <columns>
+                <TableColumn fx:id="colTipo" prefWidth="75.0" text="Tipo" />
+                <TableColumn fx:id="colNombre" prefWidth="92.33332824707031" text="Nombre" />
+                  <TableColumn fx:id="colAltura" prefWidth="82.66667175292969" text="Altura (cm)" />
+                  <TableColumn fx:id="colCantidad" prefWidth="76.99998474121094" text="Cantidad" />
+                  <TableColumn fx:id="colPrecio" prefWidth="101.33333333333331" text="Precio Unit. ($)" />
+              </columns>
+            </TableView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lblMensaje" alignment="CENTER" contentDisplay="CENTER" prefHeight="86.0" prefWidth="330.0" wrapText="true" />
+                  <VBox prefHeight="83.0" prefWidth="110.0">
+                     <children>
+                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#onEliminar" prefHeight="27.0" prefWidth="110.0" text="Eliminar" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="299.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="221.0" text="Sistema Vivero Hojas del Sur" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label prefHeight="0.0" prefWidth="221.0" text="  Elige un tipo de planta:">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <GridPane prefHeight="394.0" prefWidth="273.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="71.0" minWidth="3.000000476837158" prefWidth="3.000000476837158" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.99999809265137" minWidth="10.0" prefWidth="70.33336385091145" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.66666666666663" minWidth="10.0" prefWidth="182.66666666666663" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="10.0" prefWidth="10.333333333333314" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="53.3333314259847" minHeight="10.0" prefHeight="43.333333333333336" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="55.00000762939453" minHeight="10.0" prefHeight="44.33332951863608" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="59.99999237060547" minHeight="10.0" prefHeight="32.99999237060547" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="34.00000762939453" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="104.33331807454425" minHeight="10.0" prefHeight="43.333348592122405" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="35.33331807454428" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="21.666666666666686" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <CheckBox fx:id="chbResisteHeladas" disable="true" mnemonicParsing="false" text="Resiste Heladas" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <CheckBox fx:id="chbListaParaDespacho" disable="true" mnemonicParsing="false" text="Lista para Despacho" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Button fx:id="btnRegistrar" disable="true" mnemonicParsing="false" onAction="#onRegistrar" prefHeight="25.0" prefWidth="117.0" text="Registrar" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="236.0" text="Nombre" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="91.0" prefHeight="55.0" prefWidth="73.0" text="Altura (cm)" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" layoutX="27.0" layoutY="127.0" prefHeight="17.0" prefWidth="236.0" text="Cantidad" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" layoutX="27.0" layoutY="163.0" prefHeight="52.0" prefWidth="73.0" text="Volumen (L)" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER" layoutX="27.0" layoutY="203.0" prefHeight="17.0" prefWidth="236.0" text="Especie" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtNombre" disable="true" prefHeight="25.0" prefWidth="126.0" promptText="Ej. &quot;Chrysanthemum &quot;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtVolumenMaceta" disable="true" layoutX="89.0" layoutY="87.0" prefHeight="25.0" prefWidth="126.0" promptText="Ej. &quot;0.5&quot;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtCantidad" disable="true" layoutX="89.0" layoutY="87.0" prefHeight="25.0" prefWidth="126.0" promptText="Entre 1 y 500" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtAltura" disable="true" layoutX="89.0" layoutY="87.0" prefHeight="25.0" prefWidth="126.0" promptText="Entre 1 y 300" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtEspecie" disable="true" layoutX="89.0" layoutY="87.0" prefHeight="25.0" prefWidth="126.0" promptText="Ej. &quot;Chrysanthemum Indicum&quot;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font></TextField>
+                  <ComboBox fx:id="cmbTipoPlanta" onAction="#onTipoPlanta" prefWidth="150.0" promptText="Tipo de Planta" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+         </children></VBox>
+   </children>
+</HBox>
