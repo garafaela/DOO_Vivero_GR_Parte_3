@@ -53,6 +53,8 @@ public class MainController {
         colAltura.setCellValueFactory(celda -> new ReadOnlyObjectWrapper<>(celda.getValue().getAlturaCm()));
         colCantidad.setCellValueFactory(celda -> new ReadOnlyObjectWrapper<>(celda.getValue().getCantidad()));
         colPrecio.setCellValueFactory(celda -> new ReadOnlyStringWrapper(Planta.pesos(celda.getValue().calcularPrecio())));
+
+        cmbTipoPlanta.getItems().setAll("Interior","Exterior");
     }
 
     public void actualizarObservableList(){
@@ -82,13 +84,12 @@ public class MainController {
 
     @FXML void initialize(){
         iniciarTabla();
-        cmbTipoPlanta.getItems().setAll("Interior","Exterior");
 
         try {
             repoPlantas.cargar(); //cargo info del .json al repo local
             actualizarObservableList(); //actualizo lista observable con lo que hay en el repo (repo.listar(), devuelve lista)
 
-        }catch (PersistenciaExcepcion e){
+        }catch (PersistenciaExcepcion ignored){
         }
     }
 
